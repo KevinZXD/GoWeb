@@ -14,18 +14,13 @@
 .glide/
 
 # custom
-flowgeo
+
 .cover
-*.log
 tmp
-flowanalysis
-flowanalysis_linux*
 cscope*
 tags
 *.swp
 t.*
-logs
-log
 *.tar.gz
 *.tar
 *.gzip

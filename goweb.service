@@ -1,0 +1,15 @@
+# /usr/lib/systemd/system 放置该文件  service goweb start or systenctl start goweb
+#   输出的日志都在 /var/log/message 里面
+[Unit]
+Description=Go web Service
+
+[Service]
+Restart=always
+RestartSec=3
+WorkingDirectory=/root/GoProject/GoWeb/
+ExecStart=/root/GoProject/GoWeb/echo-code-read
+KillSignal=SIGINT
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

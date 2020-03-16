@@ -25,3 +25,5 @@ t.*
 *.tar
 *.gzip
 data
+
+*.idea/

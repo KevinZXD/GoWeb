@@ -1,13 +1,13 @@
 package main
 
 import (
-	"net/http"
-	"strconv"
-
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"GoWeb/applications"
+	"GoWeb/conf"
+	"strconv"
 )
-var  num int = 1
+
 func main() {
 	// 创建一个echo实例
 	// 不同于iris、gin 是直接使用New
@@ -22,18 +22,14 @@ func main() {
 
 	// 注册路由
 	// 这里这几个框架的写法没啥区别
-	e.GET("/", hello)
+	e.GET("/", applications.Hello)
 
 	// 启动服务
 	// 基本同gin
 	// 只是加了个返回值的日志
-	e.Logger.Fatal(e.Start(":80"))
+	p, _ := conf.ReadConf("./conf/settings.toml")
+
+	port :=":"+strconv.Itoa(p.Port)
+	e.Logger.Fatal(e.Start(port))
 }
 
-// 路由handle提出来了而已
-// 匿名函数方式 不重要
-func hello(c echo.Context) error {
-	num = num +1
-	 var  contactStr ="感恩相遇，未来可期，你是第"+strconv.Itoa(num)+"位获取我的联系方式：0001 0000 0110 0111 1000 1001 0010 0101 0000 0011"
-	return c.String(http.StatusOK, contactStr)
-}

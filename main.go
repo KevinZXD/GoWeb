@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 	"GoWeb/applications"
 	"GoWeb/conf"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"strconv"
 )
 

@@ -8,6 +8,8 @@
 2).编写代码
 3).go mod vendor 下载第三方包到vendor以及整理本地包
 4).go build -mod=vendor
+5).docker run -it  -p 127.0.0.1:8083:8083 f2e0bfd99850 
+
 ```
 
 
